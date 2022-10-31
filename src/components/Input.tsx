@@ -1,9 +1,12 @@
 import styled from "styled-components";
 
-export const Input = styled.input(props => ({
+export const Input = styled.input(({ theme }) => ({
+  backgroundColor: theme.brandColor.primary,
   borderRadius: 3,
-  borderColor: props.theme.brandColor.secondary,
+  borderColor: theme.brandColor.secondary,
   padding: '14px',
-  fontFamily: props.theme.fontFamily,
-  color: props.theme.textColor.primary
+  fontFamily: theme.fontFamily,
+  fontSize: theme.fontSize,
+  lineHeight: theme.lineHeight,
+  color: theme.textColor.primary
 }))
