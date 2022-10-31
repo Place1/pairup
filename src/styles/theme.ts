@@ -1,3 +1,4 @@
+
 export const theme = {
   brandColor: {
     primary: "#FFF8EC",
@@ -11,6 +12,9 @@ export const theme = {
   'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
   sans-serif`,
   fontSize: '16px',
+  fontWeight: {
+    semibold: '600'
+  },
   lineHeight: '18px',
 };
 

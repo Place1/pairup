@@ -5,7 +5,7 @@ export function Pairings() {
   const params = useParams();
   const encodedState = params["state"] as string;
   const state = deserialize(encodedState);
-  const pair = findPair(state, state.person ?? "Enter Your Name");
+  const pair = findPair(state, state.person ?? "Enter Your Name"); // TODO: Replace with selected name from dropdown
 
   if (!pair) {
     return <div>no pair</div>;
