@@ -2,7 +2,7 @@ import * as zipson from "zipson";
 
 export interface PairupState {
   seed: number;
-  person: string;
+  person?: string;
   items: string[];
 }
 
