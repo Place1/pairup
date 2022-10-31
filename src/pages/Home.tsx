@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Input } from "../components/Input";
 import { serialize } from "../Pairup";
 
 export function Home() {
@@ -31,6 +32,7 @@ export function Home() {
 
   return (
     <div>
+      <Input></Input>
       <Link to={state}>{state}</Link>
     </div>
   );
