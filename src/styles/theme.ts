@@ -1,25 +1,19 @@
-export const theme: Theme = {
+export const theme = {
   brandColor: {
-    primary: '#FFF8EC',
-    secondary: '#000000'
+    primary: "#FFF8EC",
+    secondary: "#000000",
   },
   textColor: {
-    primary: '#000000',
-    secondary: '#636363'
+    primary: "#000000",
+    secondary: "#636363",
   },
   fontFamily: `-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
   'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-  sans-serif`
-}
+  sans-serif`,
+};
 
-export type Theme = {
-  brandColor: {
-    primary: string,
-    secondary: string
-  },
-  textColor: {
-    primary: string,
-    secondary: string
-  },
-  fontFamily: string,
+export type Theme = typeof theme;
+
+declare module "styled-components" {
+  export interface DefaultTheme extends Theme {}
 }
