@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { Button } from "../components/Button";
 import { Input } from "../components/Input";
 import { Stack } from "../components/Stack";
 import { serialize } from "../Pairup";
@@ -37,8 +38,8 @@ export function Home() {
           {names.map((_name, index) => <Input label="Name" key={index} onChange={(e) => updateName(e.currentTarget.value, index)} />)}
         </Stack>
         <Stack size="medium">
-          <button type="button" onClick={() => setNames([...names, ''])}>Add name</button>
-          <button type="submit" onClick={onSubmit}>PairUp</button>
+          <Button variant="secondary" type="button" onClick={() => setNames([...names, ''])}>Add name</Button>
+          <Button variant="primary" type="submit" onClick={onSubmit}>PairUp</Button>
         </Stack>
       </Stack>
       <Link to={serialized}>{serialized}</Link>

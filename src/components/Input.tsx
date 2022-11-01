@@ -8,12 +8,12 @@ const LabelBase = styled.label(({ theme }) => ({
   fontSize: theme.fontSize,
   fontWeight: theme.fontWeight.semibold,
   lineHeight: theme.lineHeight,
-  color: theme.textColor.secondary
+  color: theme.textColor.tertiary
 }));
 
 export const InputBase = styled.input(({ theme }) => ({
   backgroundColor: theme.brandColor.primary,
-  borderRadius: 3,
+  borderRadius: 6,
   borderColor: theme.brandColor.secondary,
   padding: '12px',
   fontFamily: theme.fontFamily,
