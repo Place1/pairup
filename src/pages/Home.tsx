@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Button } from "../components/Button";
 import { Input } from "../components/Input";
 import { Stack } from "../components/Stack";
+import { PageLayout } from "../layouts/PageLayout";
 import { serialize } from "../Pairup";
 
 type Name = string;
@@ -32,7 +33,7 @@ export function Home() {
   }
 
   return (
-    <div>
+    <PageLayout>
       <Stack size="xlarge">
         <Stack size="medium">
           {names.map((_name, index) => <Input label="Name" key={index} onChange={(e) => updateName(e.currentTarget.value, index)} />)}
@@ -43,6 +44,6 @@ export function Home() {
         </Stack>
       </Stack>
       <Link to={serialized}>{serialized}</Link>
-    </div>
+    </PageLayout>
   );
 }

@@ -11,10 +11,11 @@ const LabelBase = styled.label(({ theme }) => ({
   color: theme.textColor.tertiary
 }));
 
-export const InputBase = styled.input(({ theme }) => ({
+const InputBase = styled.input(({ theme }) => ({
   backgroundColor: theme.brandColor.primary,
   borderRadius: 6,
   borderColor: theme.brandColor.secondary,
+  borderWidth: '2px',
   padding: '12px',
   fontFamily: theme.fontFamily,
   fontSize: theme.fontSize,
@@ -23,11 +24,21 @@ export const InputBase = styled.input(({ theme }) => ({
   color: theme.textColor.primary
 }));
 
-type InputProps = {
+export type BaseLabelProps = {
   label: string;
-} & React.HTMLAttributes<HTMLInputElement>
+}
 
-export const Input = (props: InputProps) => <LabelBase>
+export type LabelProps = {
+  children?: React.ReactNode;
+} & BaseLabelProps;
+
+export const Label = (props: LabelProps) => <LabelBase>
   {props.label}
-  <InputBase {...props} type="text" />
+  {props.children}
 </LabelBase>
+
+type InputProps = BaseLabelProps & React.HTMLAttributes<HTMLInputElement>
+
+export const Input = (props: InputProps) => <Label label={props.label}>
+  <InputBase {...props} type="text" />
+</Label>
